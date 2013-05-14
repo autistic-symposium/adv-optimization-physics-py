@@ -1,0 +1,8 @@
+even more complex example:
+
+-- debug and non-debug version of the code
+
+-- dependency list is "included"
+
+-- we are using git, so let see a way to get the git hash into our code.
+   This is useful to store in the output to make sure 

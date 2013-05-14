@@ -1,0 +1,250 @@
+% MARINA VON STEINKIRCH, SPRING/2013
+% http://mysbfiles.stonybrook.edu/~mvonsteinkir/
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		Header		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt]{article}
+
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{indentfirst}
+\usepackage{fancyhdr, lastpage}
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+
+\pagestyle{myheadings}
+\pagestyle{fancy}
+
+\newcounter{question}[section]
+\newcommand{\question}[2] {\vspace{.25in} \fbox{#1} #2 \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+\newcommand{\ie}{{\it i.e., }}
+\newcommand{\eg}{{\it e.g., }}
+
+\markright{PHYS 688: Homework \#3 Numerical Methods for (Astro)Physics}
+\author{\color{purple}{\bf Marina von Steinkirch}}
+\title{\color{red}{\bf PHYS 688: Numerical Methods for AstroPhysics \\Homework \#3: Linear Algebra and FFTs} }
+
+\fancyhf{}
+\lhead{Marina von Steinkirch}
+\chead{Linear Algebra and FFTs}
+\rhead{Homework \#3}
+\cfoot{Page \thepage{} of \protect\pageref{LastPage}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+
+
+
+{\color{MidnightBlue}
+\question{Q.1}
+{}{\color{MidnightBlue}
+\question{Q.2}
+{} \texttt{{\bf See outputs from source codes. }}}}
+
+
+{\color{MidnightBlue}
+\question{Q.3}{\texttt{{\bf(Time Series)} {\bf The equation of motion for a damped driven pendulum is:
+$$ml \frac{d\theta^2}{dt^2} = F_g + F_d + F_r,$$
+where $\theta$ is the angle of the pendulum from vertical, $F_r = f_0 \cos(\omega_d)$ is the driving force with amplitude $f_0$ and driving frequency $\omega_d$, $F_d = \kappa \nu$ is the resistive force and $F_g = mg \sin (\theta)$ is the gravitational force on the pendulum. We can write this as a system of the form:
+$$\frac{\theta}{dt} = \omega,$$
+$$\frac{\omega}{dt}˙ = -q \omega - \sin(\theta) + b \cos (\omega_d),$$
+where $q$ is a {\it scaled damping coefficient} and $b$ is a {\it scaled forcing amplitude}. We also took $l = g$ to simplify things.}}}} 
+
+
+
+
+\begin{enumerate}
+
+\item[1.] We integrate this system using {\it 4th-order Runge-Kutta} and a {\it uniform timestep} (equally spaced points to do Fourier analysis). We chose the parameters $q = 0.5$, $b = 0.9$, and $\omega_d=2/3$. We integrate for tmax = 100 periods and we pick a timestep dt = 0.05 that gives a converged solution. We plot $\omega - \theta$ (left top plots in the below figures) and we can see the period motion for $0.5 \leq b<10.0$.
+
+\item[2.] We perform the {\it discrete Fourier transform} (DFT) of $\theta(t)$ and plot the power spectrum for values $0.5 \leq b\leq 13.5$ (figures above), where for $b\geq 10.0$ the behaviour is chaotic.
+
+\end{enumerate}
+
+
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-05_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-05_dft.png} 
+\caption{{\bf Periodic Regime, b = 0.5}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-055_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-055_dft.png} 
+\caption{{\bf Periodic Regime, b = 0.55}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-06_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-06_dft.png} 
+\caption{{\bf Periodic Regime, b = 0.6}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-065_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-065_dft.png} 
+\caption{{\bf Periodic Regime, b = 0.65}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-07_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-07_dft.png} 
+\caption{{\bf Periodic Regime, b = 0.07}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-075_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-055_dft.png} 
+\caption{{\bf Periodic Regime, b = 0.75}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-08_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-08_dft.png} 
+\caption{{\bf Periodic Regime, b = 0.8}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-085_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-085_dft.png} 
+\caption{{\bf Periodic Regime, b = 0.85}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-09_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-09_dft.png} 
+\caption{{\bf Periodic Regime, b = 0.9}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-095_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-095_dft.png} 
+\caption{{\bf Periodic Regime, b = 0.95}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+
+\quad
+
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-10_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-10_dft.png} 
+\caption{{\bf Chaotic Regime, b = 1.0}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-105_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-105_dft.png} 
+\caption{{\bf Chaotic Regime, b = 10.5}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-11_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-11_dft.png} 
+\caption{{\bf Chaotic Regime, b = 11.1}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-115_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-115_dft.png} 
+\caption{{\bf Chaotic Regime, b = 11.5}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-12_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-12_dft.png} 
+\caption{{\bf Chaotic Regime, b = 12}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-125_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-125_dft.png} 
+\caption{{\bf Chaotic Regime, b = 12.5}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-13_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-13_dft.png} 
+\caption{{\bf Chaotic Regime, b = 13}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.6]{plots/b-135_phase_space.png} \\
+\includegraphics[scale=0.6]{plots/b-135_dft.png} 
+\caption{{\bf Chaotic Regime, b = 13.5}: (left) {\it Phase space} and {\it power spectrum} for the damped driven  pendulum. (right) The {\it discrete Fourier transform} (DFT) and its inverse, returning to the original function).}
+\end{center}
+\end{figure}
+
+\quad
+
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		Ref		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{thebibliography}{}
+
+\bibitem{mike}{\it Mike Zingale's Class}, {\it http://bender.astro.sunysb.edu/classes/phy688$\_$spring2013}
+
+\bibitem{pang}{\it An Introduction to Computational Physics}, T. Pang, Cambridge Press
+
+\bibitem{mhj}{\it Computational Physics}, M. Hjorth-Jensen
+
+
+\end{thebibliography}
+
+
+
+\end{document}
+

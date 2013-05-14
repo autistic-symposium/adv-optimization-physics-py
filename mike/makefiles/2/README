@@ -1,0 +1,8 @@
+slightly more complex example:
+
+-- still no dependencies amongst files
+
+-- Makefile uses macros -- this scales a lot better as the number of 
+   source files increases
+
+-- also adds a "clean" target

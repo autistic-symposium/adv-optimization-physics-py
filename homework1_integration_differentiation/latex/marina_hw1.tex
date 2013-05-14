@@ -1,0 +1,444 @@
+% MARINA VON STEINKIRCH, SPRING/2013
+% http://mysbfiles.stonybrook.edu/~mvonsteinkir/
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		Header		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt]{article}
+
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{indentfirst}
+\usepackage{fancyhdr, lastpage}
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+
+\pagestyle{myheadings}
+\pagestyle{fancy}
+
+\newcounter{question}[section]
+\newcommand{\question}[2] {\vspace{.25in} \fbox{#1} #2 \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+\newcommand{\ie}{{\it i.e., }}
+\newcommand{\eg}{{\it e.g., }}
+
+\markright{PHYS 688: Homework \#1 Numerical Methods for (Astro)Physics}
+\author{\color{purple}{\bf Marina von Steinkirch}}
+\title{\color{red}{\bf PHYS 688: Numerical Methods for AstroPhysics \\Homework \#1: Integration \&  Differentiation} }
+
+\fancyhf{}
+\lhead{Marina von Steinkirch}
+\chead{Integration \&  Differentiation}
+\rhead{Homework \#1}
+\cfoot{Page \thepage{} of \protect\pageref{LastPage}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		Q1		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\color{MidnightBlue}
+\question{Q.1}{\texttt{{\bf(Numerical Derivatives)} {\bf Exploration of two different approaches to derive numerical derivatives:	
+}}}}
+
+\quad
+
+\begin{enumerate}
+
+\item[(a)] {\color{MidnightBlue} \texttt{ Derive a second-order accurate {\it one-sided} derivative at $x=x_i$ using	the function value at the 3 points $x_i$, $x_{i+1}$, and $x_{i+2}$, assuming that the spacing, $\Delta x$, is constant.}}
+
+\quad
+
+Consider a discrete set of data represented by three points $x_i$, $x_{i+1}$, and $x_{i+2}$ and with a constant spacing 
+$$\Delta x = x_{i+2}-x_{i+1}=x_{i+1}-x_i,$$
+and
+$$2\Delta x = x_{i+2}-x_{i}.$$
+
+\quad
+
+Consider that the function we want to calculate the derivative (at $x_i$) is known at the grid points:
+$$f_i=f(x_i),$$   
+$$f_{i+1}=f(x_{i+1})=f(x_i + \Delta x),$$
+and 
+$$f_{i+2}=f(x_{i+2})= f(x_i + 2 \Delta x).$$ 
+
+\quad
+
+The mathematical definition of the derivative of a function $f(x)$, where $h$ is the step size, is
+\begin{equation}
+\frac{df(x)}{dx} = \lim_{h \rightarrow 0} \frac{f(x+h)-f(x)}{h }.
+\label{f'}
+\end{equation}
+
+\quad
+
+For the three points in consideration, we could write a {\it first-order approximation} using two points at each time, resulting on the two {\it one-sided differences}:
+$$\frac{df(x)}{dx}\Bigg|_{x_{i}} \sim \frac{f(x_{i+2}) - f(x_{i})}{2 \Delta x},$$
+and
+$$\frac{df(x)}{dx}\Bigg|_{x_{i}} \sim \frac{f(x_{i+1}) - f(x_{i})}{\Delta x}.$$
+
+\quad
+
+ However, these approximations do not give us any instruction of how to relate together all the information that the function $f(x)$ at the three points carries (\ie this is a 3-point \textit{stencil}\footnote{The range of points involved is called the stencil.}). In other words, the higher accuracy comes from the addition of one more point to the simple {\it two-points difference}, and it is clear that in the equations above the first approximation loses the information  contained in the function at the point $x_{x+2}$  and the second approximation loses the information that the function at $x_{x+1}$ carries.
+ 
+\quad
+ 
+To evaluate a {\it second-order} accurate derivative with three points, we can use the definition of the {\it Taylor expansion} for a function $f(x)$ that is infinitely differentiable in a neighborhood of a point $h$:
+\begin{equation}
+f(x+h) = f(x) + f'(x) h + \frac{f''(x)}{2}h^2 + \mathcal{O}( h^3).
+\label{taylorf}
+\end{equation}
+
+\quad
+
+For the three points in consideration, the Eq. \ref{taylorf} becomes 
+$$f(x_{i+2}) = f(x_{i}+2\Delta x) = f(x_{i}) +f'(x_{i})(2\Delta x) + \frac{f''(x_{i})}{2}(2\Delta x)^2+ \mathcal{O}((2\Delta x)^3),$$
+and
+$$f(x_{i+1}) = f(x_{i}+\Delta x) = f(x_{i}) +f'(x_{i})\Delta x + \frac{f''(x_{i})}{2}\Delta x^2+ \mathcal{O}(\Delta x^3).$$
+
+\quad
+
+We can now set a {\it computed derivative}, $f'(x_i)$, by rewriting the equations above as
+$$f'(x_i) = \frac{f(x_{i+2}) -f(x_{i}) }{2\Delta x}  - \frac{f''(x_{i})}{2}(2\Delta x)+ \mathcal{O}((2\Delta x)^2).$$
+and
+$$f'(x_i) = \frac{f(x_{i+1}) -f(x_{i}) }{\Delta x}  - \frac{f''(x_{i})}{2}(\Delta x)+ \mathcal{O}(\Delta x^2).$$
+
+\quad
+
+Rewriting the above (second) equation in a more suitable way (multiplying both sides by $\times [-2]$ and the first term in the right side by $\times [2/2]$),
+$$- 2f'(x_i) = \frac{-4f(x_{i+1}) +4f(x_{i}) }{2\Delta x}  + \frac{f''(x_{i})}{2}(2\Delta x)+ (-)\mathcal{O}(2\Delta x^2),$$
+and adding both the relations, 
+$$-f'(x_i) = \frac{f(x_{i+2}) - f(x_i) - 4f(x_{i+1}) + 4f(x_i)}{2\Delta x} + (2)\mathcal{O}(\Delta x^2),$$
+results on the {\it second order accurate first derivative} at  $x_i$:\\
+
+\quad
+
+\centerline{\fbox{\parbox{0.75\columnwidth}{$$f'(x_i) = \frac{-f(x_{i+2})  + 4f(x_{i+1}) -3f(x_i)}{2\Delta x} + \mathcal{O}(\Delta x^2).$$}}}
+
+\quad
+
+The last term in the above equation, $ \mathcal{O}(\Delta x)^2$, is the grid size, denoting the  (leading term in) truncation error (the order of accuracy in the error representation). Since this term  gives an error estimation, any multiplicative constant is absorbed, \ie the order of the term is the only meaningful information. This fact can be seen when we represent the methods developed in this exercise for some analytic function (\eg $f(x)=\sin(x)$), as in the Fig. \ref{der-comp} (motivated by the same discussion in class).
+
+\quad
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.75]{fprime.png} 
+\caption{Comparison of the first derivative of $f(x)=\sin(x)$ at the point $x=1$ to many orders of accuracy and to centered and one-sided (right and left) differences.}
+\label{der-comp}
+\end{center}
+\end{figure} 
+
+\quad
+
+\item[(b)] {\color{MidnightBlue}\texttt{When deriving the {\it Simpson's rule}, we can obtain a quadratic function passing through $f(x)$ at the points $x_0$, $x_1$ and $x_2$,
+\begin{equation}
+f(x) = \frac{f_0 - 2f_1 +f_2}{2 \Delta x^2} (x-x_0)^2 + \frac{-f_2+4f_1-3f_0}{2\Delta x}(x-x_1) + f_0.
+\label{simpson}
+\end{equation} }}
+
+
+{\color{MidnightBlue}\texttt{Show that }}
+
+\begin{enumerate}
+\item[(i)] {\color{MidnightBlue}\texttt{The derivative of $f(x)$	at point $x_1$ recovers the centered difference formula.}}
+
+\quad
+
+The derivative of Eq. \ref{simpson} is
+
+\begin{eqnarray}
+\frac{d f(x)}{dx} &=& \Bigg( \frac{f_0-2f_1+f_2}{2\Delta x^2} \Bigg)(2)(x-x_0) + \Bigg( \frac{-f_2+4f_1-3f_0}{2\Delta x} \Bigg),
+\label{df}
+\end{eqnarray}
+ 
+which calculating at the point $x_1$ and making $\Delta x = x_1 - x_0$ gives the {\it second order centered difference formula},
+
+\quad
+ 
+\centerline{\fbox{\parbox{0.35\columnwidth}{$$f'(x_1) = \frac{f_2 -f_0}{2\Delta x}.$$}}}
+
+\quad
+
+\item[(ii)] {\color{MidnightBlue}\texttt{The derivative of $f(x)$ at $x_0$ gives the same expression from part (a), but now right-sided.}}
+
+\quad
+
+When calculating the Eq. \ref{df} at the point $x=x_0$, the first right-side term vanishes, resulting in a similar expression obtained in the item (a) (but right-sided if we say $x_0\rightarrow x_{i+2}$),
+
+\centerline{\fbox{\parbox{0.35\columnwidth}{$$f'(x_0) = \frac{-f_2+4f_1 -3f_0}{2\Delta x}.$$}}}
+
+\end{enumerate}
+\end{enumerate}
+
+\quad
+
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		Q2		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\color{MidnightBlue}
+\question{Q.2}{\texttt{{\bf(Derivative Error Estimates)} {\bf  Starting with the {\it second-order centered difference} equation (as in the item Q.1-b-i),
+\begin{equation}
+\Delta_1(h) = \frac{f(x+h)-f(x-h)}{2h};
+\label{delta1}
+\end{equation}
+write a program to compute the numerical derivative of $f(x)=\sin(x)$ at $x=1$. By comparing $\Delta_1(h)$ and $\Delta_1(h/2)$, reach {\it relative error} $\epsilon=10^{-7}$. In addition, return the {\it Richardson} extrapolated value of $f'(x)$, which is $\mathcal{O}(h^4)$.
+}}}}
+
+\quad
+
+A real number $x$ has a machine representation given by
+
+$$fl(x) = x(1+\epsilon),$$
+with a given precision $|\epsilon|\leq \epsilon_M$, where  $\epsilon_M$ is the machine precision (\ie single:$10^{-7}$, double:$10^{-16}$). Therefore, we cannot represent all decimal numbers with an exact binary representation in a computer (\eg the binary representation of the decimal 0.1). This is called the {\it roundoff error.}
+
+\quad
+
+To numerically calculate derivatives of a function $f(x)$ to a set of data, we can interpolate the data to a uniform grid with $2 \leq i \leq n$ points, with convenient distances, $h$,  between each of them.   In this case, a {\it truncation error} is also introduced, so that the total {\it absolute} error is
+
+\begin{equation}
+\epsilon_{\rm total} = \Bigg | f'(x) - \frac{\bar{f}(x_{i+1}) - \bar{f}(x_{i})}{\Delta x} \Bigg| \leq \frac{|f^{''}|h}{2} + \frac{2\epsilon_M}{h},
+\label{err1}
+\end{equation}
+with $\bar{f}(x_{i})$ being an approximation of ${f}(x_{i})$. The first term in the right-side is the  truncation error, and the second term is the  roundoff error. 
+
+\quad
+
+When the function $f(x)$ is available analytically we can make estimates of error and control the {\it accuracy} in an adaptive scheme. With the Eq. \ref{delta1}, we can chose  values for $h$ that make the comparison of $\Delta_1(h)$ to $\Delta_1(h/2)$ close to the desired error, which in this case is  $\epsilon_{\rm desired} \sim 10^{-7}$. This is the same order of  a single precision machine error, so that calculating our machine error gives $\epsilon_{\rm roundoff } \sim 2.22 \times 10^{-16} \ll \epsilon_{\rm desired}$.
+
+\quad
+
+To estimate the first derivative (and respective errors) we iteratively build  more accurate approximations, adding to our approximation of $f'(x)$ higher order of Taylor expansion terms. These higher order terms can be calculated at $h$ and $h/2$ (\ie in between grid intervals), resulting on the {\it Richardson extrapolation} of the value of $f'$,\\
+
+\centerline{\fbox{\parbox{0.6\columnwidth}{$$f'_{\rm R} = - \frac{\Delta_1(h) - 4\Delta_1(h/2)}{3} + \mathcal{O}(h^4).$$}}}
+
+\quad
+
+The errors calculated in this approximation can be {\it absolute},
+$$\Big |f'(x)-f'_{\rm R} \Big | \leq \epsilon_{\rm a}, $$ {\it relative},
+$$\Bigg |\frac{f'(x)-f'_{\rm R}}{f'(x)} \Bigg | \leq \epsilon_{\rm r}, $$
+and a {\it truncation} error $\mathcal{O}(h^4)$,
+$$h^2 \times  \Big | \Delta_1(h) - \Delta_1(h/2)   \Big | \leq \epsilon_{\rm t}  \sim \epsilon_{\rm desired}.$$
+
+\quad
+
+For the derivative of $f(x)=\sin(x)$ at $x=1$, Fig. \ref{dev1} shows a comparison among these three errors versus the grinding size ($h$) and the iteration size ($n$).
+
+\quad
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.4]{der_error.png} 
+\includegraphics[scale=0.4]{der_error2.png} 
+\caption{(left) Absolute, relative, and truncation errors versus the grinding size $h$, for the calculation of the first order derivative of $f(x)=\sin(x)$ at $x=1$ by Richardson extrapolation method. (right) Same calculations but for the number of iterations $n$.}
+\label{dev1}
+\end{center}
+\end{figure}
+
+\quad
+
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		Q3		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\color{MidnightBlue}
+\question{Q.3}{\texttt{{\bf(Simpson's Rule)} {\bf In class we derived the compound version of the Simpson's rule,  which we integrate over pairs of slabs/intervals:	}}}}
+
+\quad
+
+We want to solve numerically the integral
+$$I = \int_a^b f(x) dx. $$
+
+\quad
+
+The simplest case is by a {\it piecewise constant interpolation}, \ie the {\it midpoint rule},
+$$ I_{\rm m} \sim (b-a) f\Big(\frac{a+b}{2}\Big).$$
+
+\quad
+
+A little better approximation is by a {\it piecewise linear interpolation}, \ie the {\it trapezoid rule},
+$$ I_{\rm t} \sim (b-a) \frac{f(b)+f(a)}{2},$$
+
+\quad
+
+The accuracy is better for higher-order interpolating polynomials. If we  try to  approximate the integral by a parabola, with $\delta = (b-a)/2$, 
+\begin{equation}
+f(x) = A(x-x_0)^2 + B(x-x_1)+C,
+\label{parab}
+\end{equation}
+with
+$$A = \frac{f_0 -2f_1+f_2}{2\delta^2}, $$
+$$B = - \frac{f_2-4f_1+3f_0}{2 \delta}, $$
+and
+$$C = f_0,$$
+
+we derive the {\it Simpson's rule}, 
+\begin{eqnarray*}
+I_{\rm S} &\sim& \int_{x_0}^{x_2} \Big [ A(x-x_0)^2 + B(x-x_0) + C  \Big ] dx,\\
+&\sim& \frac{\delta}{3} \Big( f_0 + 4f_1 +f_2 \Big).
+\end{eqnarray*}
+
+
+\quad
+
+
+These simple integration methods are not accurate for a larger domain, \ie when $[a,b]$ is large. In principle, we could keep adding higher order polynomials terms to get more accuracy. However, a better options is called {\it compound integration}, which breaks the domain into sub-domains and use the integration rules in each of the respective slabs,
+$$I = \int_a^b f(x) dx = \sum_{i=0}^{N-1}  \int_{x_i}^{x_i+1} f(x) dx.$$
+
+\quad
+
+The {\it compound Simpson's} integral method is given by
+
+\quad
+
+\centerline{\fbox{\parbox{0.6\columnwidth}{$$I_{\rm cS} = \frac{h}{3}  \sum_{i=0}^{N/2-1} \Big (  f_{2i} + 4f_{2i+1} + f_{2i+2} \Big ) + \mathcal{O}(h^4),$$}}}
+
+\quad
+
+which in order to pair up all the slices, we have to have an {\it even} number of slices.
+
+\quad
+
+\begin{enumerate}
+
+\item[(a)] {\color{MidnightBlue} \texttt{Imagine that you want to integrate $f(x)$ over $[a,b]$, and have divided the domain into an odd number, $N$, slabs/intervals, with the function specified at the points $x_0,...,x_N$. In this case, you would integrate all the pairs of slabs up until the last slab. For the remaining odd slab, $[x_{N-1},x_N]$, show that a Simpson's rule for the slab is\\
+\begin{equation}
+\int^{x_N}_{x_{N-1}} f(x) dx \sim \frac{h}{12}  (-f_{N-2} + 8f_{N-1} + 5f_N).
+\label{in3}
+\end{equation}
+}}
+
+\quad
+
+To derive Eq. \ref{in3} we  first fit it to a parabola to the last three points, as in Eq. \ref{parab}, where $x_0=x_{N-2}, x_1=x_{N-1}, x_2=x_{N}$,
+$$f_{\rm cS}(x) = A(x-x_{N-2})^2 + B(x-x_{N-2})+C,$$
+with
+$$A = \frac{f_{N-2} -2f_{N-1}+f_N}{2\delta^2}, $$
+$$B = - \frac{f_N-4f_{N-1}+3f_{N-2}}{2 \delta}, $$
+and
+$$C = f_{N-2}.$$
+
+\quad
+
+Integrating over the last slab, with $\delta \rightarrow h = x_{i+1} - x_i$, gives the desired result,
+\begin{eqnarray*}
+\int^{b }_{  b-h } f(x) dx &=& \int^{x_N}_{x_{N-1}} \Big[A(x-x_{N-2})^2 + B(x-x_{N-2})+C \Big]dx,
+\\
+&=& \frac{A}{3}(x-x_{N-2})^3\Bigg|_{x_{N-1}}^{x_N} + \frac{B}{2} (x-x_{N-2})^2\Bigg|_{x_{N-1}}^{x_N} + Cx\Bigg|_{x_{N-1}}^{x_N},  
+\\
+&=& \frac{f_{N-2} -2f_{N-1}+f_N}{6\delta^2}(x-x_{N-2})^3\Bigg|_{x_{N-1}}^{x_N} - \frac{f_N-4f_{N-1}+3f_{N-2}}{4 \delta} (x-x_{N-2})^2\Bigg|_{x_{N-1}}^{x_N} \\
+&& + f_{N-2}x\Bigg|_{x_{N-1}}^{x_N}	,
+\\
+&=& \frac{f_{N-2} -2f_{N-1}+f_N}{6h^2} \Bigg [(x_N-x_{N-2})^3 -  (x_{N-1}-x_{N-2})^3\Bigg ]\\
+&& -\frac{f_{N}-4 f_{N-1}+3f_{N-2}}{4 h}  \Bigg [(x_N-x_{N-2})^2 -  (x_{N-1}-x_{N-2})^2\Bigg ]\\
+&& + f_{N-2} ( x_N-x_{N-1} ),
+\\
+&=& \frac{f_{N-2} -2f_{N-1}+f_N}{6h^2}  [7h^3]-\frac{f_{N}-4 f_{N-1}+3f_{N-2}}{4 h}   [3h^2 ]+ f_{N-2} [h],
+\\
+&=& \frac{7f_{N-2} -14f_{N-1}+7f_N}{6}h-\frac{3f_{N}-12 f_{N-1}+9f_{N-2}}{4 }   h+ f_{N-2} h,
+\\
+&=& \frac{14f_{N-2} -28f_{N-1}+14f_N}{12}h-\frac{9f_{N}-36 f_{N-1}+27f_{N-2}}{12 }   h+ f_{N-2} h,
+\\
+&=& \frac{h}{12} \Big [(14-27+12)f_{N-2} + (-28+36)f_{N-1} +(14-9)f_N \Big] ,
+\\
+&=&  \frac{h}{12}  \Big[-f_{N-2} + 8f_{N-1} + 5f_N\Big].
+\end{eqnarray*}
+
+\quad
+
+\item[(b)] {\color{MidnightBlue}\texttt{Integration of $f(x)=\sin(\pi x)$ over $[0,1]$ using $N=3,7,15,31$ slabs/intervals, with a plot with the absolute error vs. $\delta=(b-a)/N$ (Fig \ref{innn}).}}
+
+\quad
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.4]{simp.png} 
+\includegraphics[scale=0.4]{simp2.png} 
+\caption{(left) Log-log plot of the absolute errors  vs. $\delta=(b-a)/N$ showing a $\mathcal{O}(\delta^4)$ {\it convergence} in the calculation of the (Simpson compound) integration of  $f(x)=\sin(\pi x)$ over $[0,1]$ using $N=3,7,15,31$ slabs/intervals. (right) Same for absolute error vs. $N$. }
+\label{innn}
+\end{center}
+\end{figure}
+
+\quad
+
+\end{enumerate}
+
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		Q4		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\color{MidnightBlue}
+\question{Q.4}{\texttt{{\bf(Gaussian Quadrature)} {\bf In the Gauss-Legendre quadrature method, with $n$ quadrature points, an exact integral of a polynomial up to degree $d=2n-1$ is obtained. }}}}
+
+{\color{MidnightBlue}{\bf
+(1.) Consider a 5-point quadrature, with tabled roots and weights, for the Gauss-Legendre method. Compute 
+
+$$I = \int_0^1p(x) dx,$$
+where $p(x)$ is a 9th degree polynomial
+$$p(x) = \sum^9_{k=0} x^k.$$
+
+\quad 
+
+(2.) Compute also the compound version of the Simpson's rule (2 pairs of intervals) and the (3.)error against the exact integral.
+}}
+
+\quad
+
+
+In the Gaussian quadrature method, instead of a fixed spacing, we express the integral as a sums of weighted pieces, \ie we choose the location of each $x_i$. The fundamental theorem states that for some polynomial $q(x)$ of degree $N$, such that
+$$ \int_a^b q(x) \rho(x) x^k dx = 0,$$
+
+such that $k=0,..,N-1$ and $\rho(x)$ is a weight function. We pick the points $x_1, x_2, ...x_N$ as the roots of the polynomial $q(x)$. For a sets of weights $\omega_1,...,\omega_N$, the integral
+$$\int_a^b f(x)\rho(x) dx \sim \omega_1 f(x_1) + ... +\omega_N f(x_N),$$
+is exact if $f(x)$ is a polynomial of degree $<2N$. This is more acurate than just fitting the function to a polynomial of degree $N-1$, as when we had fixed grid of $N$ points.
+
+
+\quad
+
+
+\quad
+
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		Ref		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{thebibliography}{}
+
+\bibitem{mike}{\it Mike Zingale's Class}, {\it http://bender.astro.sunysb.edu/classes/phy688$\_$spring2013}
+
+\bibitem{pang}{\it An Introduction to Computational Physics}, T. Pang, Cambridge Press
+
+\bibitem{mhj}{\it Computational Physics}, M. Hjorth-Jensen
+
+
+\end{thebibliography}
+
+
+
+\end{document}
+

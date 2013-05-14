@@ -1,0 +1,7 @@
+[raytay]
+pressure_bottom = 1.0
+dens_up = 2.0
+dens_down = 1.0
+sigma = 0.4
+pert_amplitude_factor = 0.1
+

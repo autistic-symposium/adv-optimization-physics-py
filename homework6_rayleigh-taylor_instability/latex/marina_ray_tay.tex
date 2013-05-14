@@ -1,0 +1,227 @@
+% MARINA VON STEINKIRCH, SPRING/2013
+% http://mysbfiles.stonybrook.edu/~mvonsteinkir/
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		Header		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt]{article}
+
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{indentfirst}
+\usepackage{fancyhdr, lastpage}
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+
+\pagestyle{myheadings}
+\pagestyle{fancy}
+
+\newcommand{\question}[2] {\vspace{.25in} \fbox{#1} #2 \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+\newcommand{\ie}{{\it i.e., }}
+\newcommand{\eg}{{\it e.g., }}
+
+\markright{PHYS 688: Homework \#6 Numerical Methods for (Astro)Physics}
+\author{\color{purple}{\bf Marina von Steinkirch}}
+\title{\color{red}{\bf PHYS 688: Numerical Methods for AstroPhysics \\Homework \#6: 2D Rayleigh-Taylor Instability} }
+
+\fancyhf{}
+\lhead{Marina von Steinkirch}
+\chead{2D Rayleigh-Taylor Instability}
+\rhead{Homework \#6}
+\cfoot{Page \thepage{} of \protect\pageref{LastPage}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+
+
+
+
+{\color{MidnightBlue}
+{\bf Implement a model of {\it Rayleigh-Taylor instability} in the  \texttt{pyro code} \cite{pyro}.}}
+
+\quad
+
+
+\begin{enumerate}
+\item The {\it initial conditions} for density defines a heavy fluid over a light fluid, separated by an interface:
+$$
+\rho = \left\{ \begin{array}{rl}
+\rho_{\rm down}  &\mbox{ if } y < 0.5 \cdot y_{\rm center}  \\
+ \rho_{\rm up}  &\mbox{ if } y \geq 0.5 \cdot y_{\rm center}  ,
+       \end{array} \right.
+$$
+where $\rho_{\rm up}>\rho_{\rm down}$ are {\bf arbitrary inputs} and $y_{\rm center} = y_{\rm min} + y_{\rm max}$.
+
+\quad
+
+
+\item The {\it evolution} for pressure is given by hydrostatic equilibrium for the gravity constant, $g$,
+$$ \frac{\partial p}{\partial z} + \rho g = 0,$$
+which translates as
+$$
+p = \left\{ \begin{array}{rl}
+ p_0 + \rho_{\rm down }\cdot g \cdot y  &\mbox{ if } y< 0.5 \cdot y_{\rm center}  \\
+ p_0 + \rho_{\rm down}  \cdot g  \cdot y_{\rm center} + \rho_{\rm up} \cdot g \cdot (y - y_{\rm center})  &\mbox{ if } y \geq 0.5 \cdot y_{\rm center} ,
+       \end{array} \right.
+$$
+where $p_0$ is an {\bf arbitrary input}.
+
+\quad
+
+\item The {\it perturbation} is applied to the $y$-velocity,
+$$ v = A \sin(2 \pi x/ L_x) \cdot e^{-(y-y_{\rm center})^2/\sigma^2},$$
+and should be small, where $A$ is the amplitude and $\sigma$ the vertical extent of the perturbation, both {\bf arbitrary inputs}.
+
+\quad
+
+\item The {\it boundary conditions} are {\it periodic} on the sides ($x$) and {\it reflecting} at the top and 
+bottom ($y$).
+
+\quad
+
+\item The {\it domain} is made {\it tall}, with $y \in [0,3]$ and {\it narrow}, with $x \in [0,1]$.
+
+\end{enumerate}
+
+
+\quad
+
+Using the following input parameters:
+\begin{itemize}
+\item $\rho_{\rm down} = 1.0, $
+\item $\rho_{\rm up} =0.2$,
+\item $p_0 = 1.0$,
+\item $g =1.0$.
+\end{itemize}
+
+
+\quad 
+
+We test many possibilities for the perturbation parameters, $A$ and $\sigma$. First, if $A$ is too large, \eg $A=0.8$, it quickly creates shocks, which interferes with the process, as we can see in the Fig. \ref{ev}.
+
+\quad
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.25]{figures/g_1_A08_s008_128_256_Atoobig_schocks/1.png}
+\includegraphics[scale=0.25]{figures/g_1_A08_s008_128_256_Atoobig_schocks/2.png}
+\includegraphics[scale=0.25]{figures/g_1_A08_s008_128_256_Atoobig_schocks/3.png}
+\includegraphics[scale=0.25]{figures/g_1_A08_s008_128_256_Atoobig_schocks/4.png}
+\includegraphics[scale=0.25]{figures/g_1_A08_s008_128_256_Atoobig_schocks/5.png}
+\includegraphics[scale=0.25]{figures/g_1_A08_s008_128_256_Atoobig_schocks/6.png}
+\includegraphics[scale=0.25]{figures/g_1_A08_s008_128_256_Atoobig_schocks/7.png}
+\includegraphics[scale=0.25]{figures/g_1_A08_s008_128_256_Atoobig_schocks/8.png}
+\includegraphics[scale=0.25]{figures/g_1_A08_s008_128_256_Atoobig_schocks/9.png}
+\includegraphics[scale=0.25]{figures/g_1_A08_s008_128_256_Atoobig_schocks/10.png}
+\includegraphics[scale=0.25]{figures/g_1_A08_s008_128_256_Atoobig_schocks/11.png} 
+\includegraphics[scale=0.25]{figures/g_1_A08_s008_128_256_Atoobig_schocks/12.png}
+\caption{Rayleigh-Taylor instability with shocks: here the amplitude of the perturbation in the velocity is too large. $A=0.8, \sigma=0.08$, grids $[200,600]$}
+\label{ev}
+\end{center}
+\end{figure}
+
+
+\quad
+
+
+If we set $\sigma$ to be too small, the fluid only propagates, as we can see in the Fig. \ref{ev2}.
+
+\quad
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.4]{figures/g_98A_15_sig001_fail_stoosmall_200x600/1.png}
+\includegraphics[scale=0.4]{figures/g_98A_15_sig001_fail_stoosmall_200x600/2.png}
+\includegraphics[scale=0.4]{figures/g_98A_15_sig001_fail_stoosmall_200x600/3.png}
+\includegraphics[scale=0.4]{figures/g_98A_15_sig001_fail_stoosmall_200x600/4.png}
+\caption{Rayleigh-Taylor instability not seen and interfered by shocks: here $\sigma$  is too small. $A=1.0$ and $\sigma=0.001$, grid $[200,600]$}
+\label{ev2}
+\end{center}
+\end{figure}
+
+\quad
+
+The tuning is important in this problem. Reducing $A$ and increasing $\sigma$ to find a good development of the  perturbation in the plane dividing the two liquids, avoiding shocks. For example, we make $A=0.1, \sigma =0.1$, as in Fig. \ref{ev3}, the RT-instability still did not have enough time to form before the shock.
+
+\quad
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.4]{figures/a01_s01_nothing/1.png}
+\includegraphics[scale=0.4]
+{figures/a01_s01_nothing/3.png}
+\includegraphics[scale=0.4]
+{figures/a01_s01_nothing/5.png}
+\includegraphics[scale=0.4]
+{figures/a01_s01_nothing/6.png}
+\includegraphics[scale=0.4]
+{figures/a01_s01_nothing/7.png}
+\includegraphics[scale=0.4]
+{figures/a01_s01_nothing/8.png}
+
+\caption{Rayleigh-Taylor instability not clear: increasing  $\sigma=0.1$ and decreasing $A=0.1$, still is not enough. Meshes: $[200,600]$}
+\label{ev3}
+\end{center}
+\end{figure}
+
+
+\quad
+
+A set of parameters that showed  the RT-instability without being interfered by shock to the boundaries were $\sigma =0.4$ and $A=0.1$, as we can see in the Fig. \ref{ev4}.
+
+
+\quad
+
+
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.4012]{figures/pretty/1.png}
+\includegraphics[scale=0.4012]{figures/pretty/4.png}
+\includegraphics[scale=0.4012]{figures/pretty/6.png}
+\includegraphics[scale=0.4012]{figures/pretty/11.png}
+\caption{Rayleigh-Taylor instability formed: with $\sigma=0.4$ and $A=0.01$, and grids $[256,768]$.}
+\label{ev4}
+\end{center}
+\end{figure}
+
+
+\quad
+
+
+To compare resolution, we run the same parameters above but with a smaller grid, [100, 300]. Altought the RT-instabilities seems to appears fast (smaller grids), they present very low resolution, as we see in the Fig. \ref{ev5}. 
+
+
+\quad
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.7]{figures/pretty/11.png}
+\includegraphics[scale=0.7]{figures/low/7.png}
+\caption{Rayleigh-Taylor instabilities for $\sigma=0.4$ and $A=0.01$, and two sizes of grids: (top) $[256,768]$ and (bottom) $[100,300]$.}
+\label{ev5}
+\end{center}
+\end{figure}
+
+
+\quad
+
+\begin{thebibliography}{}
+
+\bibitem{pyro}{\it Mike Zingale's Class}, {\it http://bender.astro.sunysb.edu/hydro$\_$by$\_$example/compressible/}
+
+
+\end{thebibliography}
+
+
+
+\end{document}
+

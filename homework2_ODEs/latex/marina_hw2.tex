@@ -1,0 +1,270 @@
+% MARINA VON STEINKIRCH, SPRING/2013
+% http://mysbfiles.stonybrook.edu/~mvonsteinkir/
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		Header		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article}
+
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{indentfirst}
+\usepackage{fancyhdr, lastpage}
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+
+\pagestyle{myheadings}
+\pagestyle{fancy}
+
+\newcounter{question}[section]
+\newcommand{\question}[2] {\vspace{.25in} \fbox{#1} #2 \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+\newcommand{\ie}{{\it i.e., }}
+\newcommand{\eg}{{\it e.g., }}
+
+\markright{PHYS 688: Homework \#1 Numerical Methods for (Astro)Physics}
+\author{\color{purple}{\bf Marina von Steinkirch}}
+\title{\color{red}{\bf PHYS 688: Numerical Methods for AstroPhysics \\Homework \#2: ODEs} }
+
+\fancyhf{}
+\lhead{Marina von Steinkirch}
+\chead{ODEs}
+\rhead{Homework \#2}
+\cfoot{Page \thepage{} of \protect\pageref{LastPage}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		Q1		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\color{MidnightBlue}
+\question{Q.1}{\texttt{{\bf(ODEs)} {\bf Solve the pendulum system, 
+$$\frac{d^2\theta}{dt^2} + \frac{g}{L} \sin \theta = 0,$$
+Using both the {\it Euler} and the {\it Euler-Cromer methods}:
+\begin{eqnarray}
+ \dot \theta &=& \omega, \\
+ \dot \omega &=& -\frac{g}{L} \sin \theta,
+\label{pen1}
+\end{eqnarray}
+where $\theta$ is the angular displacement from vertical, $\dot \theta = \omega$ is the angular velocity, and $\dot \omega = \alpha$ is the angular acceleration. Pick $L = 10$ m and $g = 10$ m/s$^2$. Compare the solutions for $\theta = 10^o$ and $\theta =100^o$. Make a plot of both $\theta (t)$ vs. $t$ and $E$ vs. $t$, where
+\begin{eqnarray}
+E = \frac{1}{2} m L^2 \omega^2 - mgL (1 - \cos \theta).
+\label{E}
+\end{eqnarray}
+ Notice the stark difference in the behavior between the two methods. In each case, estimate the period from your numerical solution,
+\begin{eqnarray}
+T = 2 \pi \sqrt{\frac{L}{g}} \Bigg ( 1 + \frac{1}{16}\theta^2_m + ... \Bigg).
+\label{T}
+\end{eqnarray}
+ }}}}
+
+\quad
+
+
+Assuming zero friction at the top mount of the pendulum, no atmospheric drag, and a stiff pendulum arm, the {\it simple problem} can be modeled with Eqs. 1-3. In this case, the only force is the {\it gravity}, $g$, which can be decomposed into two components:  parallel and  perpendicular to the pendulum.  The parallel component can be equated to the  gravitational force giving the Eq. 3. 
+
+\quad
+
+\subsection*{Analytic Solution}
+
+The standard analytic solution is the {\it small angle approximation}, $\sin \theta \sim \theta,$
+with a prompt solution (picking $L=10$ m and $g = 10$ m/s$^2$) given by
+$$ \theta (t) =  A \cos (t + \phi),$$
+and we have used
+$$T = 2 \pi \mbox { s}^{-1}.$$
+The constants $A$ and $\phi$ are obtained from the {\it initial conditions} in the problem (in this case, $\omega_0=0$ and $\theta_0=10^o,100^{o}$). 
+
+
+\quad
+
+
+
+\subsection*{The Euler Method}
+
+In the {\it Euler method}, we express the new states in terms of the old states. Supposing we know the position (angular displacement) and the velocity (angular velocity) at time $t=n\Delta t$, we can then write the following pair of coupled equations:
+\begin{equation}
+ \omega^{n+1} = \omega^n + \Delta t \alpha^n + \mathcal{O}(\Delta t^2),
+\end{equation}
+\begin{equation}
+ \theta^{n+1} = \theta^n + \Delta t \omega^n + \mathcal{O}(\Delta t^2),
+\end{equation}
+where $n+1$ indicates the time level and the local truncation error is $\Delta t^2$.
+
+\quad
+
+However, integration consists of many steps and this causes {\it local error} to accumulate. In the Euler method, the global truncation is $\sim \Delta t$, \ie the solution  can change over a step.
+
+\quad
+
+\subsection*{The Euler-Cromer Method}
+A slight modification in the Eq. 6 gives the {\it Euler-Cromer} equations, which allows an improvement in the local error accumulation,
+\begin{equation}
+ \omega^{n+1} = \omega^n + \Delta t \alpha^n + \mathcal{O}(\Delta t^2),
+\end{equation}
+\begin{equation}
+ \theta^{n+1} = \theta^n + \Delta t \omega^{n+1} + \mathcal{O}(\Delta t^2),
+\end{equation}
+with the same formal local truncation error.
+
+
+\quad
+
+\subsection*{Numerical Results}
+
+
+We test the above two numerical methods, Euler and Euler-Cromer, to solve the pendulum differential equations.  Both methods are based on the {\it finite approximation of derivatives}. To apply them, we consider a system of discrete points on regular meshes: $\Delta t = 0.005, 0.01, 0.05, 0.1, 0.5$. Results of $\theta(t)$ vs. $t$ and $E$ vs. $t$ for  are shown in the Figs. \ref{f1},  \ref{f2}, \ref{f3}, and \ref{f4}. For the case of the simple pendulum system we can see that the error of an approximation increases with the size of the mesh for the Euler case but not for the Euler-Cromer.
+
+
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.4]{plots/theta_vs_t_for_theta0-10_dt-0005.png} 
+\includegraphics[scale=0.4]{plots/theta_vs_t_for_theta0-10_dt-001.png} 
+\includegraphics[scale=0.4]{plots/theta_vs_t_for_theta0-10_dt-005.png} 
+\includegraphics[scale=0.4]{plots/theta_vs_t_for_theta0-10_dt-01.png} 
+\includegraphics[scale=0.4]{plots/theta_vs_t_for_theta0-10_dt-05.png} 
+\caption{Angular displacement in function of time for the simple pendulum system, for an initial angular displacement of $\theta_0=10^o$ and for 5 sizes of regular meshes $\Delta t$.}
+\label{f1}
+\end{center}
+\end{figure}
+
+
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.4]{plots/theta_vs_t_for_theta0-100_dt-0005.png} 
+\includegraphics[scale=0.4]{plots/theta_vs_t_for_theta0-100_dt-001.png} 
+\includegraphics[scale=0.4]{plots/theta_vs_t_for_theta0-100_dt-005.png} 
+\includegraphics[scale=0.4]{plots/theta_vs_t_for_theta0-100_dt-01.png} 
+\includegraphics[scale=0.4]{plots/theta_vs_t_for_theta0-100_dt-05.png} 
+\caption{Angular displacement in function of time for the simple pendulum system, for an initial angular displacement of $\theta_0=100^o$ and for 5 sizes of regular meshes $\Delta t$.}
+\label{f2}
+\end{center}
+\end{figure}
+
+\quad
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		Q2		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\color{MidnightBlue}
+\question{Q.2}{\texttt{{\bf(ODEs)} {\bf By substituting $\theta^{n+1}$ and $\omega^{n+1}$ into the total energy expression for the above methods, show that
+the total energy monotonically increases in time when the system is solved using Euler's method (The same is not true with the Euler-Cromer method, which is why it does much better).
+}}}}
+
+
+\quad
+
+The total energy in the simple pendulum system should remain constant (since it is a conservative system). However, with the increase of amplitude, the Euler method shows an increase of the energy. This result can be derived  by writing the energy for a step $n+1$ and expressing it through coordinates at $n$,
+\begin{eqnarray*}
+ E^{n+1} &=&  \frac{mL^2}{2} \Bigg [ (\omega^{n+1})^2 + \frac{g}{L} (\theta^{n+1})^2 \Bigg],\\
+&=& \frac{mL^2}{2} \Bigg [ \Bigg ( \omega^n - \frac{g}{L} \theta^n \Delta t \Bigg)^2 + \frac{g}{L} (\theta^n + \omega^n \Delta t)^2 \Bigg ], \\
+&=& E^n + \frac{mgL}{2} \Bigg (\frac{g}{L}(\theta^n)^2 + (\omega^n)^2 \Bigg) (\Delta t)^2.
+\end{eqnarray*}
+
+\quad
+
+The energy non-conservation exists independent of the step-size: the Euler method is not good for the harmonic motion! If instead we use the Euler-Cromer equations,  we ensure  energy conservation and the amplitude is stable with time and independent of $\Delta t$. Plots of  $E$ vs. $t$ for the two methods for mesh values $\Delta t = 0.005, 0.01, 0.05, 0.1, 0.5$ can be seen in the Figs. \ref{f3} and \ref{f4}.
+
+
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.4]{plots/energy_vs_t_for_theta0-10_dt-0005.png} 
+\includegraphics[scale=0.4]{plots/energy_vs_t_for_theta0-10_dt-001.png} 
+\includegraphics[scale=0.4]{plots/energy_vs_t_for_theta0-10_dt-005.png} 
+\includegraphics[scale=0.4]{plots/energy_vs_t_for_theta0-10_dt-01.png} 
+\includegraphics[scale=0.4]{plots/energy_vs_t_for_theta0-10_dt-05.png} 
+\caption{Absolute Energy in function of time for the simple pendulum system, for an initial angular displacement of $\theta_0=10^o$ and for 5 sizes of regular meshes $\Delta t$.}
+\label{f3}
+\end{center}
+\end{figure}
+
+
+
+\begin{figure} [ht]
+\begin{center}
+\includegraphics[scale=0.4]{plots/energy_vs_t_for_theta0-100_dt-0005.png} 
+\includegraphics[scale=0.4]{plots/energy_vs_t_for_theta0-100_dt-001.png} 
+\includegraphics[scale=0.4]{plots/energy_vs_t_for_theta0-100_dt-005.png} 
+\includegraphics[scale=0.4]{plots/energy_vs_t_for_theta0-100_dt-01.png} 
+\includegraphics[scale=0.4]{plots/energy_vs_t_for_theta0-100_dt-05.png} 
+\caption{Absolute Energy in function of time for the simple pendulum system, for an initial angular displacement of $\theta_0=100^o$ and for 5 sizes of regular meshes $\Delta t$.}
+\label{f4}
+\end{center}
+\end{figure}
+
+\quad
+
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		Q3		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\color{MidnightBlue}
+\question{Q.3}{\texttt{{\bf(ODEs)} {\bf The velocity Verlet method applies when the acceleration term (or angular acceleration in this case, $\alpha$) does not depend on the velocity (angular velocity, $\omega$). The update through a time-step is:
+\begin{eqnarray}
+ \theta^{n+1} = \theta^n+ \omega^n \Delta t + \frac{1}{2} \alpha^n (\Delta t)^2,\\
+\omega^{n+1} = \omega^n + \frac{1}{2} (\alpha^n + \alpha^{n+1})\Delta t.
+\end{eqnarray}
+Implement this method for the simple pendulum and estimate its convergence by comparing the total energy after several periods to the initial energy for a variety of choices of $\Delta t$.
+}}}}
+
+\quad
+
+\begin{figure} [ht!]
+\begin{center}
+\includegraphics[scale=0.6]{plots/verlet_energy_vs_t_for_theta0-10_.png} 
+\includegraphics[scale=0.6]{plots/verlet_energy_vs_t_for_theta0-100_.png} 
+\caption{Convergence using the net energy after one period as the error measure, being slightly $\sim \mathcal{O}(\Delta t)$.}
+\label{f5}
+\end{center}
+\end{figure}
+
+
+\quad
+
+Better accuracy is achieved in a single time-step by using a higher-order integration method. These typically use more derivative  information  ($\alpha$) to gain accuracy. The convergence of this method for the simple pendulum system for initial displacement $\theta_0 = 10^o, 100^o$ can be seen in the Fig. \ref{f5}. The convergence is slightly $\sim \mathcal{O}(\Delta t)$.
+
+
+
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		Ref		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{thebibliography}{}
+
+\bibitem{mike}{\it Mike Zingale's Class}, {\it http://bender.astro.sunysb.edu/classes/phy688$\_$spring2013}
+
+\bibitem{pang}{\it An Introduction to Computational Physics}, T. Pang, Cambridge Press
+
+\bibitem{mhj}{\it Computational Physics}, M. Hjorth-Jensen
+
+\bibitem{odes}{\it Stiff ODE Solvers: A Review of Current and Coming Attractions}, G. D. Byrne $\&$ A. C. Hindmarsh (1986)
+
+\end{thebibliography}
+
+
+
+\end{document}
+

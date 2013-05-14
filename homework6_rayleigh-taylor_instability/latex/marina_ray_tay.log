@@ -1,0 +1,380 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.8.31)  30 APR 2013 20:25
+entering extended mode
+ %&-line parsing enabled.
+**marina_ray_tay.tex
+(./marina_ray_tay.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, arabic, basque, bulgarian, coptic, welsh, czech, slovak, german, ng
+erman, danish, esperanto, spanish, catalan, galician, estonian, farsi, finnish,
+ french, greek, monogreek, ancientgreek, croatian, hungarian, interlingua, ibyc
+us, indonesian, icelandic, italian, latin, mongolian, dutch, norsk, polish, por
+tuguese, pinyin, romanian, russian, slovenian, uppersorbian, serbian, swedish, 
+turkish, ukenglish, ukrainian, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 90.
+
+(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+\epsfxsize=\dimen105
+\epsfysize=\dimen106
+)
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Package option `usenames' ignored on input line 216.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/share/texmf/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
+
+(/usr/share/texmf/tex/latex/tools/array.sty
+Package: array 2005/08/23 v2.4b Tabular extension package (FMi)
+\col@sep=\dimen107
+\extrarowheight=\dimen108
+\NC@list=\toks15
+\extratabsurround=\skip43
+\backup@length=\skip44
+)
+\everycr=\toks16
+\minrowclearance=\skip45
+)
+LaTeX Info: Redefining \color on input line 702.
+\rownum=\count88
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+
+(/usr/share/texmf/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)
+(/usr/share/texmf/tex/latex/xcolor/svgnam.def
+File: svgnam.def 2007/01/21 v2.11 Predefined colors according to SVG 1.1 (UK)
+))
+(/usr/share/texmf/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+(/usr/share/texmf/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip46
+\f@ncyO@elh=\skip47
+\f@ncyO@erh=\skip48
+\f@ncyO@olh=\skip49
+\f@ncyO@orh=\skip50
+\f@ncyO@elf=\skip51
+\f@ncyO@erf=\skip52
+\f@ncyO@olf=\skip53
+\f@ncyO@orf=\skip54
+)
+(/usr/share/texmf/tex/latex/lastpage/lastpage.sty
+Package: lastpage 1994/06/25 v0.1b LaTeX2e package for refs to last page number
+ (JPG)
+)
+No file marina_ray_tay.aux.
+\openout1 = `marina_ray_tay.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 42.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 42.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 42.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 48.
+
+LaTeX Warning: Citation `pyro' on page 1 undefined on input line 48.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 55.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 55.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 99.
+(/usr/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 99.
+ [1
+
+{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Reference `ev' on page 2 undefined on input line 108.
+
+
+<figures/g_1_A08_s008_128_256_Atoobig_schocks/1.png, id=18, 578.16pt x 433.62pt
+>
+File: figures/g_1_A08_s008_128_256_Atoobig_schocks/1.png Graphic file (type png
+)
+ <use figures/g_1_A08_s008_128_256_Atoobig_schocks/1.png>
+<figures/g_1_A08_s008_128_256_Atoobig_schocks/2.png, id=19, 578.16pt x 433.62pt
+>
+File: figures/g_1_A08_s008_128_256_Atoobig_schocks/2.png Graphic file (type png
+)
+ <use figures/g_1_A08_s008_128_256_Atoobig_schocks/2.png>
+<figures/g_1_A08_s008_128_256_Atoobig_schocks/3.png, id=20, 578.16pt x 433.62pt
+>
+File: figures/g_1_A08_s008_128_256_Atoobig_schocks/3.png Graphic file (type png
+)
+ <use figures/g_1_A08_s008_128_256_Atoobig_schocks/3.png>
+<figures/g_1_A08_s008_128_256_Atoobig_schocks/4.png, id=21, 578.16pt x 433.62pt
+>
+File: figures/g_1_A08_s008_128_256_Atoobig_schocks/4.png Graphic file (type png
+)
+ <use figures/g_1_A08_s008_128_256_Atoobig_schocks/4.png>
+<figures/g_1_A08_s008_128_256_Atoobig_schocks/5.png, id=22, 578.16pt x 433.62pt
+>
+File: figures/g_1_A08_s008_128_256_Atoobig_schocks/5.png Graphic file (type png
+)
+ <use figures/g_1_A08_s008_128_256_Atoobig_schocks/5.png>
+<figures/g_1_A08_s008_128_256_Atoobig_schocks/6.png, id=23, 578.16pt x 433.62pt
+>
+File: figures/g_1_A08_s008_128_256_Atoobig_schocks/6.png Graphic file (type png
+)
+ <use figures/g_1_A08_s008_128_256_Atoobig_schocks/6.png>
+<figures/g_1_A08_s008_128_256_Atoobig_schocks/7.png, id=24, 578.16pt x 433.62pt
+>
+File: figures/g_1_A08_s008_128_256_Atoobig_schocks/7.png Graphic file (type png
+)
+ <use figures/g_1_A08_s008_128_256_Atoobig_schocks/7.png>
+<figures/g_1_A08_s008_128_256_Atoobig_schocks/8.png, id=25, 578.16pt x 433.62pt
+>
+File: figures/g_1_A08_s008_128_256_Atoobig_schocks/8.png Graphic file (type png
+)
+ <use figures/g_1_A08_s008_128_256_Atoobig_schocks/8.png>
+<figures/g_1_A08_s008_128_256_Atoobig_schocks/9.png, id=26, 578.16pt x 433.62pt
+>
+File: figures/g_1_A08_s008_128_256_Atoobig_schocks/9.png Graphic file (type png
+)
+ <use figures/g_1_A08_s008_128_256_Atoobig_schocks/9.png>
+<figures/g_1_A08_s008_128_256_Atoobig_schocks/10.png, id=27, 578.16pt x 433.62p
+t>
+File: figures/g_1_A08_s008_128_256_Atoobig_schocks/10.png Graphic file (type pn
+g)
+ <use figures/g_1_A08_s008_128_256_Atoobig_schocks/10.png>
+<figures/g_1_A08_s008_128_256_Atoobig_schocks/11.png, id=28, 578.16pt x 433.62p
+t>
+File: figures/g_1_A08_s008_128_256_Atoobig_schocks/11.png Graphic file (type pn
+g)
+ <use figures/g_1_A08_s008_128_256_Atoobig_schocks/11.png>
+<figures/g_1_A08_s008_128_256_Atoobig_schocks/12.png, id=29, 578.16pt x 433.62p
+t>
+File: figures/g_1_A08_s008_128_256_Atoobig_schocks/12.png Graphic file (type pn
+g)
+ <use figures/g_1_A08_s008_128_256_Atoobig_schocks/12.png>
+
+LaTeX Warning: Reference `ev2' on page 2 undefined on input line 135.
+
+
+<figures/g_98A_15_sig001_fail_stoosmall_200x600/1.png, id=30, 578.16pt x 433.62
+pt>
+File: figures/g_98A_15_sig001_fail_stoosmall_200x600/1.png Graphic file (type p
+ng)
+ <use figures/g_98A_15_sig001_fail_stoosmall_200x600/1.png>
+<figures/g_98A_15_sig001_fail_stoosmall_200x600/2.png, id=31, 578.16pt x 433.62
+pt>
+File: figures/g_98A_15_sig001_fail_stoosmall_200x600/2.png Graphic file (type p
+ng)
+ <use figures/g_98A_15_sig001_fail_stoosmall_200x600/2.png>
+<figures/g_98A_15_sig001_fail_stoosmall_200x600/3.png, id=32, 578.16pt x 433.62
+pt>
+File: figures/g_98A_15_sig001_fail_stoosmall_200x600/3.png Graphic file (type p
+ng)
+ <use figures/g_98A_15_sig001_fail_stoosmall_200x600/3.png>
+<figures/g_98A_15_sig001_fail_stoosmall_200x600/4.png, id=33, 578.16pt x 433.62
+pt>
+File: figures/g_98A_15_sig001_fail_stoosmall_200x600/4.png Graphic file (type p
+ng)
+ <use figures/g_98A_15_sig001_fail_stoosmall_200x600/4.png>
+
+LaTeX Warning: Reference `ev3' on page 2 undefined on input line 152.
+
+<figures/a01_s01_nothing/1.png, id=34, 578.16pt x 433.62pt>
+File: figures/a01_s01_nothing/1.png Graphic file (type png)
+
+<use figures/a01_s01_nothing/1.png>
+<figures/a01_s01_nothing/3.png, id=35, 578.16pt x 433.62pt>
+File: figures/a01_s01_nothing/3.png Graphic file (type png)
+
+<use figures/a01_s01_nothing/3.png>
+<figures/a01_s01_nothing/5.png, id=36, 578.16pt x 433.62pt>
+File: figures/a01_s01_nothing/5.png Graphic file (type png)
+
+<use figures/a01_s01_nothing/5.png>
+<figures/a01_s01_nothing/6.png, id=37, 578.16pt x 433.62pt>
+File: figures/a01_s01_nothing/6.png Graphic file (type png)
+
+<use figures/a01_s01_nothing/6.png>
+<figures/a01_s01_nothing/7.png, id=38, 578.16pt x 433.62pt>
+File: figures/a01_s01_nothing/7.png Graphic file (type png)
+
+<use figures/a01_s01_nothing/7.png>
+<figures/a01_s01_nothing/8.png, id=39, 578.16pt x 433.62pt>
+File: figures/a01_s01_nothing/8.png Graphic file (type png)
+
+<use figures/a01_s01_nothing/8.png>
+
+LaTeX Warning: Float too large for page by 18.83475pt on input line 173.
+
+
+LaTeX Warning: Reference `ev4' on page 2 undefined on input line 178.
+
+<figures/pretty/1.png, id=40, 578.16pt x 433.62pt>
+File: figures/pretty/1.png Graphic file (type png)
+ <use figures/pretty/1.png>
+<figures/pretty/4.png, id=41, 578.16pt x 433.62pt>
+File: figures/pretty/4.png Graphic file (type png)
+ <use figures/pretty/4.png>
+<figures/pretty/6.png, id=42, 578.16pt x 433.62pt>
+File: figures/pretty/6.png Graphic file (type png)
+ <use figures/pretty/6.png>
+<figures/pretty/11.png, id=43, 578.16pt x 433.62pt>
+File: figures/pretty/11.png Graphic file (type png)
+
+<use figures/pretty/11.png>
+
+LaTeX Warning: Reference `ev5' on page 2 undefined on input line 200.
+
+File: figures/pretty/11.png Graphic file (type png)
+<use figures/pretty/11.png> <figures/low/7.png, id=44, 578.16pt x 433.62pt>
+File: figures/low/7.png Graphic file (type png)
+
+<use figures/low/7.png>
+
+LaTeX Warning: Float too large for page by 104.56384pt on input line 212.
+
+AED: lastpage setting LastPage
+
+LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 226.
+
+[2]
+
+LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 226.
+
+[3 <./figures/g_1_A08_s008_128_256_Atoobig_schocks/1.png> <./figures/g_1_A08_s0
+08_128_256_Atoobig_schocks/2.png> <./figures/g_1_A08_s008_128_256_Atoobig_schoc
+ks/3.png> <./figures/g_1_A08_s008_128_256_Atoobig_schocks/4.png> <./figures/g_1
+_A08_s008_128_256_Atoobig_schocks/5.png> <./figures/g_1_A08_s008_128_256_Atoobi
+g_schocks/6.png> <./figures/g_1_A08_s008_128_256_Atoobig_schocks/7.png> <./figu
+res/g_1_A08_s008_128_256_Atoobig_schocks/8.png> <./figures/g_1_A08_s008_128_256
+_Atoobig_schocks/9.png> <./figures/g_1_A08_s008_128_256_Atoobig_schocks/10.png>
+ <./figures/g_1_A08_s008_128_256_Atoobig_schocks/11.png> <./figures/g_1_A08_s00
+8_128_256_Atoobig_schocks/12.png>]
+
+LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 226.
+
+[4 <./figures/g_98A_15_sig001_fail_stoosmall_200x600/1.png> <./figures/g_98A_15
+_sig001_fail_stoosmall_200x600/2.png> <./figures/g_98A_15_sig001_fail_stoosmall
+_200x600/3.png> <./figures/g_98A_15_sig001_fail_stoosmall_200x600/4.png>]
+
+LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 226.
+
+[5 <./figures/a01_s01_nothing/1.png> <./figures/a01_s01_nothing/3.png> <./figur
+es/a01_s01_nothing/5.png> <./figures/a01_s01_nothing/6.png> <./figures/a01_s01_
+nothing/7.png> <./figures/a01_s01_nothing/8.png>]
+
+LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 226.
+
+[6 <./figures/pretty/1.png> <./figures/pretty/4.png> <./figures/pretty/6.png> <
+./figures/pretty/11.png>]
+
+LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 226.
+
+[7 <./figures/low/7.png>] (./marina_ray_tay.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1674 strings out of 256216
+ 24091 string characters out of 1917072
+ 93251 words of memory out of 1500000
+ 4953 multiletter control sequences out of 10000+200000
+ 8716 words of font info for 31 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 41i,11n,43p,359b,244s stack positions out of 5000i,500n,6000p,200000b,15000s
+</usr/share/texmf/fonts/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf/fonts/t
+ype1/bluesky/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmex10.pfb>
+</usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb></usr/share/texmf/fonts/typ
+e1/bluesky/cm/cmmi7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr10.pfb></us
+r/share/texmf/fonts/type1/bluesky/cm/cmr12.pfb></usr/share/texmf/fonts/type1/bl
+uesky/cm/cmr5.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr7.pfb></usr/share
+/texmf/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesky/
+cm/cmsy7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmti10.pfb></usr/share/te
+xmf/fonts/type1/bluesky/cm/cmtt10.pfb>
+Output written on marina_ray_tay.pdf (7 pages, 1979817 bytes).
+PDF statistics:
+ 132 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 131072)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+

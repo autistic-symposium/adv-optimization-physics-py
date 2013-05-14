@@ -1,0 +1,34 @@
+[driver]
+max_steps = 10000
+tmax = 10.0
+
+[io]
+basename = raytay_
+n_out = 100
+
+[eos]
+gamma = 1.4
+
+[mesh]
+xmin = 0.0                ; domain minumum x-coordinate
+xmax = 1.0                ; domain maximum x-coordinate
+ymin = 0.0                ; domain minimum y-coordinate
+ymax = 3.0                ; domain maximum y-coordinate
+
+xlboundary = periodic     ; minimum x BC ('reflect', 'outflow', or 'periodic')
+xrboundary = periodic     ; maximum x BC ('reflect', 'outflow', or 'periodic') 
+ylboundary = reflect     ; minimum y BC ('reflect', 'outflow', or 'periodic')
+yrboundary = reflect     ; maximum y BC ('reflect', 'outflow', or 'periodic')
+
+nx = 256
+ny = 768
+
+[vis]
+dovis = 1                  ; runtime visualization? (1=yes, 0=no)
+store_images = 1           ; store vis images to files (1=yes, 0=no)
+
+[compressible]
+grav =  1.0
+limiter = 2
+
+

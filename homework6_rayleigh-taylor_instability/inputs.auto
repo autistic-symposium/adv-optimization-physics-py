@@ -1,0 +1,50 @@
+# automagically generated parameter file
+
+[compressible]
+cvisc = 0.100000       ; artifical viscosity coefficient
+delta = 0.330000       ; flattening delta parameter
+grav = 1.000000       ; gravitational acceleration (in y-direction)
+limiter = 2       ; limiter (0 = none, 1 = 2nd order, 2 = 4th order)
+riemann = HLLC       ; HLLC or CGF
+use_flattening = 1       ; apply flattening at shocks (1)
+z0 = 0.750000       ; flattening z0 parameter
+z1 = 0.850000       ; flattening z1 parameter
+
+[driver]
+cfl = 0.800000
+fix_dt = -1.000000
+init_tstep_factor = 0.010000       ; first timestep = init_tstep_factor * CFL timestep
+max_dt_change = 2.000000       ; max amount the timestep can change between steps
+max_steps = 5000       ; maximum number of steps to take
+tmax = 10.000000       ; maximum simulation time to evolve
+
+[eos]
+gamma = 1.400000       ; pres = rho ener (gamma - 1)
+
+[io]
+basename = raytay_       ; basename for output files
+dt_out = 0.100000       ; simulation time between writing output files
+n_out = 100       ; number of timesteps between writing output files
+
+[mesh]
+nx = 300       ; number of zones in the x-direction
+ny = 600       ; number of zones in the y-direction
+xlboundary = periodic       ; minimum x BC ('reflect', 'outflow', or 'periodic')
+xmax = 1.000000       ; domain maximum x-coordinate
+xmin = 0.000000       ; domain minumum x-coordinate
+xrboundary = periodic       ; maximum x BC ('reflect', 'outflow', or 'periodic')
+ylboundary = reflect       ; minimum y BC ('reflect', 'outflow', or 'periodic')
+ymax = 3.000000       ; domain maximum y-coordinate
+ymin = 0.000000       ; domain minimum y-coordinate
+yrboundary = reflect       ; maximum y BC ('reflect', 'outflow', or 'periodic')
+
+[raytay]
+dens_down = 1.000000
+dens_up = 2.000000
+pert_amplitude_factor = 0.800000       ; [1.0, 5.0]
+pressure_bottom = 1.000000
+sigma = 0.080000       ; [0.1, 0.05, 0.01, 0.005]
+
+[vis]
+dovis = 1       ; runtime visualization? (1=yes, 0=no)
+store_images = 1       ; store vis images to files (1=yes, 0=no)

@@ -1,0 +1,9 @@
+Place the following files in the original pyro folder:
+
+inputs.raytay, _raytay.defaults, raytay.py, __init__.py ---> pyro/compressible/problems
+ 
+and run
+
+./pyro.py compressible raytay inputs.raytay
+
+

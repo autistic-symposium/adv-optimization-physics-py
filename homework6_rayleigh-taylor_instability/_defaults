@@ -1,0 +1,42 @@
+[driver]
+
+tmax = 1.0                 ; maximum simulation time to evolve
+max_steps = 1000           ; maximum number of steps to take
+fix_dt = -1.0
+
+init_tstep_factor = 0.01   ; first timestep = init_tstep_factor * CFL timestep
+max_dt_change = 2.0        ; max amount the timestep can change between steps
+
+
+[io]
+
+basename = pyro_           ; basename for output files
+dt_out = 0.1               ; simulation time between writing output files
+n_out = 10000              ; number of timesteps between writing output files
+
+
+[vis]
+
+dovis = 1                  ; runtime visualization? (1=yes, 0=no)
+store_images = 1           ; store vis images to files (1=yes, 0=no)
+
+
+[mesh]
+
+xmin = 0.0                ; domain minumum x-coordinate
+xmax = 1.0                ; domain maximum x-coordinate
+ymin = 0.0                ; domain minimum y-coordinate
+ymax = 3.0                ; domain maximum y-coordinate
+
+xlboundary = reflect     ; minimum x BC ('reflect', 'outflow', or 'periodic')
+xrboundary = reflect     ; maximum x BC ('reflect', 'outflow', or 'periodic') 
+ylboundary = periodic     ; minimum y BC ('reflect', 'outflow', or 'periodic')
+yrboundary = periodic     ; maximum y BC ('reflect', 'outflow', or 'periodic')
+
+nx = 10                   ; number of zones in the x-direction
+ny = 30                   ; number of zones in the y-direction
+
+
+
+
+

@@ -1,0 +1,377 @@
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2012.11.30)  27 MAR 2013 03:26
+entering extended mode
+ %&-line parsing enabled.
+**marina_hw3.tex
+(./marina_hw3.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, arabic, basque, bulgarian, coptic, welsh, czech, slovak, german, ng
+erman, danish, esperanto, spanish, catalan, galician, estonian, farsi, finnish,
+ french, greek, monogreek, ancientgreek, croatian, hungarian, interlingua, ibyc
+us, indonesian, icelandic, italian, latin, mongolian, dutch, norsk, polish, por
+tuguese, pinyin, romanian, russian, slovenian, uppersorbian, serbian, swedish, 
+turkish, ukenglish, ukrainian, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 90.
+
+(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+\epsfxsize=\dimen105
+\epsfysize=\dimen106
+)
+(/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Package option `usenames' ignored on input line 216.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/share/texmf/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
+
+(/usr/share/texmf/tex/latex/tools/array.sty
+Package: array 2005/08/23 v2.4b Tabular extension package (FMi)
+\col@sep=\dimen107
+\extrarowheight=\dimen108
+\NC@list=\toks15
+\extratabsurround=\skip43
+\backup@length=\skip44
+)
+\everycr=\toks16
+\minrowclearance=\skip45
+)
+LaTeX Info: Redefining \color on input line 702.
+\rownum=\count88
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+
+(/usr/share/texmf/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)
+(/usr/share/texmf/tex/latex/xcolor/svgnam.def
+File: svgnam.def 2007/01/21 v2.11 Predefined colors according to SVG 1.1 (UK)
+))
+(/usr/share/texmf/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+(/usr/share/texmf/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip46
+\f@ncyO@elh=\skip47
+\f@ncyO@erh=\skip48
+\f@ncyO@olh=\skip49
+\f@ncyO@orh=\skip50
+\f@ncyO@elf=\skip51
+\f@ncyO@erf=\skip52
+\f@ncyO@olf=\skip53
+\f@ncyO@orf=\skip54
+)
+(/usr/share/texmf/tex/latex/lastpage/lastpage.sty
+Package: lastpage 1994/06/25 v0.1b LaTeX2e package for refs to last page number
+ (JPG)
+)
+\c@question=\count89
+ (./marina_hw3.aux)
+\openout1 = `marina_hw3.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 43.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 43.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 43.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 60.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 60.
+Missing character: There is no Ë in font cmr10!
+Missing character: There is no ™ in font cmr10!
+
+<plots/b-05_phase_space.png, id=1, 578.16pt x 433.62pt>
+File: plots/b-05_phase_space.png Graphic file (type png)
+
+<use plots/b-05_phase_space.png>
+<plots/b-05_dft.png, id=2, 578.16pt x 433.62pt>
+File: plots/b-05_dft.png Graphic file (type png)
+ <use plots/b-05_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 81.
+
+<plots/b-055_phase_space.png, id=3, 578.16pt x 433.62pt>
+File: plots/b-055_phase_space.png Graphic file (type png)
+
+<use plots/b-055_phase_space.png>
+<plots/b-055_dft.png, id=4, 578.16pt x 433.62pt>
+File: plots/b-055_dft.png Graphic file (type png)
+ <use plots/b-055_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 89.
+
+<plots/b-06_phase_space.png, id=5, 578.16pt x 433.62pt>
+File: plots/b-06_phase_space.png Graphic file (type png)
+
+<use plots/b-06_phase_space.png>
+<plots/b-06_dft.png, id=6, 578.16pt x 433.62pt>
+File: plots/b-06_dft.png Graphic file (type png)
+ <use plots/b-06_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 97.
+
+<plots/b-065_phase_space.png, id=7, 578.16pt x 433.62pt>
+File: plots/b-065_phase_space.png Graphic file (type png)
+
+<use plots/b-065_phase_space.png>
+<plots/b-065_dft.png, id=8, 578.16pt x 433.62pt>
+File: plots/b-065_dft.png Graphic file (type png)
+ <use plots/b-065_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 105.
+
+<plots/b-07_phase_space.png, id=9, 578.16pt x 433.62pt>
+File: plots/b-07_phase_space.png Graphic file (type png)
+
+<use plots/b-07_phase_space.png>
+<plots/b-07_dft.png, id=10, 578.16pt x 433.62pt>
+File: plots/b-07_dft.png Graphic file (type png)
+ <use plots/b-07_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 113.
+
+<plots/b-075_phase_space.png, id=11, 578.16pt x 433.62pt>
+File: plots/b-075_phase_space.png Graphic file (type png)
+
+<use plots/b-075_phase_space.png>
+File: plots/b-055_dft.png Graphic file (type png)
+ <use plots/b-055_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 121.
+
+<plots/b-08_phase_space.png, id=12, 578.16pt x 433.62pt>
+File: plots/b-08_phase_space.png Graphic file (type png)
+
+<use plots/b-08_phase_space.png>
+<plots/b-08_dft.png, id=13, 578.16pt x 433.62pt>
+File: plots/b-08_dft.png Graphic file (type png)
+ <use plots/b-08_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 129.
+
+<plots/b-085_phase_space.png, id=14, 578.16pt x 433.62pt>
+File: plots/b-085_phase_space.png Graphic file (type png)
+
+<use plots/b-085_phase_space.png>
+<plots/b-085_dft.png, id=15, 578.16pt x 433.62pt>
+File: plots/b-085_dft.png Graphic file (type png)
+ <use plots/b-085_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 137.
+
+<plots/b-09_phase_space.png, id=16, 578.16pt x 433.62pt>
+File: plots/b-09_phase_space.png Graphic file (type png)
+
+<use plots/b-09_phase_space.png>
+<plots/b-09_dft.png, id=17, 578.16pt x 433.62pt>
+File: plots/b-09_dft.png Graphic file (type png)
+ <use plots/b-09_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 146.
+
+<plots/b-095_phase_space.png, id=18, 578.16pt x 433.62pt>
+File: plots/b-095_phase_space.png Graphic file (type png)
+
+<use plots/b-095_phase_space.png>
+<plots/b-095_dft.png, id=19, 578.16pt x 433.62pt>
+File: plots/b-095_dft.png Graphic file (type png)
+ <use plots/b-095_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 154.
+
+<plots/b-10_phase_space.png, id=20, 578.16pt x 433.62pt>
+File: plots/b-10_phase_space.png Graphic file (type png)
+
+<use plots/b-10_phase_space.png>
+<plots/b-10_dft.png, id=21, 578.16pt x 433.62pt>
+File: plots/b-10_dft.png Graphic file (type png)
+ <use plots/b-10_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 166.
+
+<plots/b-105_phase_space.png, id=22, 578.16pt x 433.62pt>
+File: plots/b-105_phase_space.png Graphic file (type png)
+
+<use plots/b-105_phase_space.png>
+<plots/b-105_dft.png, id=23, 578.16pt x 433.62pt>
+File: plots/b-105_dft.png Graphic file (type png)
+ <use plots/b-105_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 174.
+
+<plots/b-11_phase_space.png, id=24, 578.16pt x 433.62pt>
+File: plots/b-11_phase_space.png Graphic file (type png)
+
+<use plots/b-11_phase_space.png>
+<plots/b-11_dft.png, id=25, 578.16pt x 433.62pt>
+File: plots/b-11_dft.png Graphic file (type png)
+ <use plots/b-11_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 182.
+
+<plots/b-115_phase_space.png, id=26, 578.16pt x 433.62pt>
+File: plots/b-115_phase_space.png Graphic file (type png)
+
+<use plots/b-115_phase_space.png>
+<plots/b-115_dft.png, id=27, 578.16pt x 433.62pt>
+File: plots/b-115_dft.png Graphic file (type png)
+ <use plots/b-115_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 190.
+
+<plots/b-12_phase_space.png, id=28, 578.16pt x 433.62pt>
+File: plots/b-12_phase_space.png Graphic file (type png)
+
+<use plots/b-12_phase_space.png>
+<plots/b-12_dft.png, id=29, 578.16pt x 433.62pt>
+File: plots/b-12_dft.png Graphic file (type png)
+ <use plots/b-12_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 198.
+
+<plots/b-125_phase_space.png, id=30, 578.16pt x 433.62pt>
+File: plots/b-125_phase_space.png Graphic file (type png)
+
+<use plots/b-125_phase_space.png>
+<plots/b-125_dft.png, id=31, 578.16pt x 433.62pt>
+File: plots/b-125_dft.png Graphic file (type png)
+ <use plots/b-125_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 206.
+
+<plots/b-13_phase_space.png, id=32, 578.16pt x 433.62pt>
+File: plots/b-13_phase_space.png Graphic file (type png)
+
+<use plots/b-13_phase_space.png>
+<plots/b-13_dft.png, id=33, 578.16pt x 433.62pt>
+File: plots/b-13_dft.png Graphic file (type png)
+ <use plots/b-13_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 215.
+
+<plots/b-135_phase_space.png, id=34, 578.16pt x 433.62pt>
+File: plots/b-135_phase_space.png Graphic file (type png)
+
+<use plots/b-135_phase_space.png>
+<plots/b-135_dft.png, id=35, 578.16pt x 433.62pt>
+File: plots/b-135_dft.png Graphic file (type png)
+ <use plots/b-135_dft.png>
+
+LaTeX Warning: Float too large for page by 17.84802pt on input line 223.
+
+AED: lastpage setting LastPage [1
+
+{/usr/share/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2 <./plots/b-05_phase_s
+pace.png> <./plots/b-05_dft.png>] [3 <./plots/b-055_phase_space.png> <./plots/b
+-055_dft.png>] [4 <./plots/b-06_phase_space.png> <./plots/b-06_dft.png>] [5 <./
+plots/b-065_phase_space.png> <./plots/b-065_dft.png>] [6 <./plots/b-07_phase_sp
+ace.png> <./plots/b-07_dft.png>] [7 <./plots/b-075_phase_space.png>] [8 <./plot
+s/b-08_phase_space.png> <./plots/b-08_dft.png>] [9 <./plots/b-085_phase_space.p
+ng> <./plots/b-085_dft.png>] [10 <./plots/b-09_phase_space.png> <./plots/b-09_d
+ft.png>] [11 <./plots/b-095_phase_space.png> <./plots/b-095_dft.png>] [12 <./pl
+ots/b-10_phase_space.png> <./plots/b-10_dft.png>] [13 <./plots/b-105_phase_spac
+e.png> <./plots/b-105_dft.png>] [14 <./plots/b-11_phase_space.png> <./plots/b-1
+1_dft.png>] [15 <./plots/b-115_phase_space.png> <./plots/b-115_dft.png>] [16 <.
+/plots/b-12_phase_space.png> <./plots/b-12_dft.png>] [17 <./plots/b-125_phase_s
+pace.png> <./plots/b-125_dft.png>] [18 <./plots/b-13_phase_space.png> <./plots/
+b-13_dft.png>] [19 <./plots/b-135_phase_space.png> <./plots/b-135_dft.png>] (./
+marina_hw3.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1705 strings out of 256216
+ 23083 string characters out of 1917071
+ 97251 words of memory out of 1500000
+ 4966 multiletter control sequences out of 10000+200000
+ 8111 words of font info for 29 fonts, out of 1200000 for 2000
+ 645 hyphenation exceptions out of 8191
+ 41i,11n,43p,466b,244s stack positions out of 5000i,500n,6000p,200000b,15000s
+</usr/share/texmf/fonts/type1/bluesky/cm/cmbx10.pfb></usr/share/texmf/fonts/t
+ype1/bluesky/cm/cmbx12.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi10.pfb>
+</usr/share/texmf/fonts/type1/bluesky/cm/cmmi7.pfb></usr/share/texmf/fonts/type
+1/bluesky/cm/cmr10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr12.pfb></usr
+/share/texmf/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf/fonts/type1/blue
+sky/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmti10.pfb>
+Output written on marina_hw3.pdf (19 pages, 2716366 bytes).
+PDF statistics:
+ 170 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 131072)
+ 176 words of extra memory for PDF output out of 10000 (max. 10000000)
+

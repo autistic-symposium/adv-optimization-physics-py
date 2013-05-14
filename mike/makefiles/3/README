@@ -1,0 +1,4 @@
+even more complex example:
+
+-- there are now dependencies amongst the files, so they need to be
+   built in a particular order
